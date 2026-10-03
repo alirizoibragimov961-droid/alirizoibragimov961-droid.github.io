@@ -1,0 +1,2080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Alirizo Ibragimov | Portfolio</title>
+
+    <meta name="description"
+          content="Alirizo Ibragimov — Computer Science student, English educator and content creator based in Tashkent, Uzbekistan.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        /* ================================
+           VARIABLES
+        ================================= */
+
+        :root {
+            --bg: #050816;
+            --bg2: #080d1d;
+            --card: rgba(255,255,255,.055);
+            --card-hover: rgba(255,255,255,.085);
+            --border: rgba(255,255,255,.10);
+
+            --white: #ffffff;
+            --text: #e2e8f0;
+            --muted: #94a3b8;
+
+            --blue: #38bdf8;
+            --blue2: #2563eb;
+            --purple: #8b5cf6;
+            --green: #22c55e;
+
+            --shadow: 0 25px 80px rgba(0,0,0,.38);
+        }
+
+        /* ================================
+           RESET
+        ================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            color: var(--white);
+            background:
+                radial-gradient(circle at 10% 10%,
+                    rgba(56,189,248,.13),
+                    transparent 28%),
+                radial-gradient(circle at 90% 35%,
+                    rgba(139,92,246,.12),
+                    transparent 30%),
+                var(--bg);
+
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        .container {
+            width: min(1180px, 90%);
+            margin: auto;
+        }
+
+        section {
+            padding: 110px 0;
+        }
+
+        ::selection {
+            background: var(--blue2);
+            color: white;
+        }
+
+        /* ================================
+           SCROLLBAR
+        ================================= */
+
+        ::-webkit-scrollbar {
+            width: 9px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #2563eb;
+            border-radius: 30px;
+        }
+
+        /* ================================
+           NAVBAR
+        ================================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            z-index: 999;
+
+            background: rgba(5,8,22,.78);
+            border-bottom: 1px solid var(--border);
+
+            transition: .3s;
+        }
+
+        .nav-inner {
+            height: 76px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: "Manrope", sans-serif;
+            font-size: 21px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--blue);
+        }
+
+        .nav-links {
+            list-style: none;
+
+            display: flex;
+            align-items: center;
+
+            gap: 27px;
+        }
+
+        .nav-links a {
+            font-size: 13px;
+            font-weight: 600;
+            color: #cbd5e1;
+
+            transition: .3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--blue);
+        }
+
+        .nav-contact {
+            padding: 9px 15px;
+
+            border: 1px solid rgba(56,189,248,.25);
+            border-radius: 10px;
+
+            color: var(--blue) !important;
+
+            background: rgba(56,189,248,.07);
+        }
+
+        /* ================================
+           HERO
+        ================================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            padding-top: 110px;
+            padding-bottom: 60px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+
+            align-items: center;
+            gap: 80px;
+        }
+
+        .availability {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            padding: 8px 14px;
+            margin-bottom: 25px;
+
+            border-radius: 30px;
+
+            border: 1px solid rgba(34,197,94,.25);
+            background: rgba(34,197,94,.07);
+
+            color: #86efac;
+
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+
+            background: var(--green);
+
+            border-radius: 50%;
+
+            box-shadow: 0 0 14px var(--green);
+        }
+
+        .hero-small {
+            color: var(--blue);
+
+            text-transform: uppercase;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 12px;
+        }
+
+        .hero h1 {
+            font-family: "Manrope", sans-serif;
+
+            font-size: clamp(55px, 7vw, 92px);
+            line-height: .98;
+
+            letter-spacing: -5px;
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: var(--blue);
+
+            text-shadow:
+                0 0 40px rgba(56,189,248,.15);
+        }
+
+        .hero-role {
+            font-size: 19px;
+            font-weight: 600;
+
+            color: #cbd5e1;
+
+            margin-bottom: 22px;
+        }
+
+        .hero-description {
+            max-width: 640px;
+
+            color: var(--muted);
+
+            font-size: 15px;
+
+            margin-bottom: 32px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        /* ================================
+           BUTTONS
+        ================================= */
+
+        .btn {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 9px;
+
+            padding: 13px 20px;
+
+            border-radius: 11px;
+
+            border: none;
+
+            cursor: pointer;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            transition: .3s;
+        }
+
+        .btn-primary {
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0ea5e9,
+                    #4f46e5
+                );
+
+            box-shadow:
+                0 12px 35px rgba(37,99,235,.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 18px 45px rgba(37,99,235,.35);
+        }
+
+        .btn-outline {
+            color: white;
+
+            border: 1px solid var(--border);
+
+            background: rgba(255,255,255,.04);
+        }
+
+        .btn-outline:hover {
+            transform: translateY(-3px);
+
+            background: rgba(255,255,255,.09);
+        }
+
+        /* ================================
+           PROFILE PHOTO
+        ================================= */
+
+        .photo-wrapper {
+            position: relative;
+
+            max-width: 430px;
+
+            margin-left: auto;
+        }
+
+        .photo-glow {
+            position: absolute;
+
+            width: 80%;
+            height: 80%;
+
+            top: 10%;
+            left: 10%;
+
+            background: #2563eb;
+
+            filter: blur(110px);
+
+            opacity: .25;
+        }
+
+        .profile-card {
+            position: relative;
+
+            padding: 12px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 30px;
+
+            background: rgba(255,255,255,.05);
+
+            box-shadow: var(--shadow);
+
+            overflow: hidden;
+        }
+
+        .profile-card img {
+            width: 100%;
+            display: block;
+
+            aspect-ratio: 4 / 5;
+
+            object-fit: cover;
+            object-position: center top;
+
+            border-radius: 22px;
+        }
+
+        .profile-info {
+            position: absolute;
+
+            left: 28px;
+            right: 28px;
+            bottom: 28px;
+
+            padding: 18px;
+
+            border-radius: 16px;
+
+            background: rgba(5,8,22,.82);
+
+            border: 1px solid rgba(255,255,255,.12);
+        }
+
+        .profile-info h3 {
+            font-size: 17px;
+            margin-bottom: 2px;
+        }
+
+        .profile-info p {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        /* ================================
+           STATS
+        ================================= */
+
+        .stats {
+            margin-top: 70px;
+
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+
+            border: 1px solid var(--border);
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            background: rgba(255,255,255,.035);
+        }
+
+        .stat {
+            padding: 24px;
+
+            text-align: center;
+
+            border-right: 1px solid var(--border);
+        }
+
+        .stat:last-child {
+            border-right: none;
+        }
+
+        .stat strong {
+            display: block;
+
+            color: var(--blue);
+
+            font-size: 27px;
+            font-weight: 800;
+        }
+
+        .stat span {
+            color: var(--muted);
+
+            font-size: 12px;
+        }
+
+        /* ================================
+           SECTION HEADINGS
+        ================================= */
+
+        .section-label {
+            color: var(--blue);
+
+            text-transform: uppercase;
+
+            font-size: 11px;
+            font-weight: 800;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 9px;
+        }
+
+        .section-title {
+            font-family: "Manrope", sans-serif;
+
+            font-size: clamp(34px,5vw,52px);
+
+            letter-spacing: -2px;
+
+            margin-bottom: 16px;
+        }
+
+        .section-description {
+            max-width: 700px;
+
+            color: var(--muted);
+
+            margin-bottom: 45px;
+        }
+
+        /* ================================
+           ABOUT
+        ================================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+
+            gap: 18px;
+        }
+
+        .feature-card {
+            padding: 26px;
+
+            border-radius: 18px;
+
+            border: 1px solid var(--border);
+
+            background: var(--card);
+
+            transition: .3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-6px);
+
+            background: var(--card-hover);
+
+            border-color: rgba(56,189,248,.25);
+        }
+
+        .feature-icon {
+            width: 46px;
+            height: 46px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 18px;
+
+            border-radius: 13px;
+
+            color: var(--blue);
+
+            background: rgba(56,189,248,.1);
+        }
+
+        .feature-card h3 {
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            color: var(--muted);
+
+            font-size: 13px;
+        }
+
+        /* ================================
+           EXPERIENCE
+        ================================= */
+
+        .experience-list {
+            display: flex;
+            flex-direction: column;
+
+            gap: 20px;
+        }
+
+        .experience-card {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+
+            gap: 35px;
+
+            padding: 30px;
+
+            border: 1px solid var(--border);
+            border-radius: 20px;
+
+            background: var(--card);
+
+            transition: .3s;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-4px);
+
+            border-color: rgba(56,189,248,.25);
+        }
+
+        .experience-date {
+            color: var(--blue);
+
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .experience-content h3 {
+            font-size: 21px;
+            margin-bottom: 4px;
+        }
+
+        .company {
+            color: #cbd5e1;
+
+            font-size: 14px;
+
+            margin-bottom: 13px;
+        }
+
+        .experience-content p {
+            max-width: 750px;
+
+            color: var(--muted);
+
+            font-size: 14px;
+        }
+
+        /* ================================
+           EDUCATION
+        ================================= */
+
+        .education-card {
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 30px;
+
+            padding: 35px;
+
+            border-radius: 20px;
+
+            border: 1px solid var(--border);
+
+            background: var(--card);
+        }
+
+        .education-left {
+            display: flex;
+
+            align-items: center;
+
+            gap: 22px;
+        }
+
+        .education-icon {
+            min-width: 60px;
+            height: 60px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 17px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0284c7,
+                    #4f46e5
+                );
+
+            font-size: 22px;
+        }
+
+        .education-card h3 {
+            font-size: 21px;
+        }
+
+        .education-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .education-year {
+            color: var(--blue);
+
+            font-weight: 700;
+
+            white-space: nowrap;
+        }
+
+        /* ================================
+           SKILLS
+        ================================= */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+
+            gap: 20px;
+        }
+
+        .skill-card {
+            padding: 27px;
+
+            border-radius: 19px;
+
+            border: 1px solid var(--border);
+
+            background: var(--card);
+        }
+
+        .skill-card h3 {
+            margin-bottom: 18px;
+
+            font-size: 17px;
+        }
+
+        .skill-card h3 i {
+            color: var(--blue);
+
+            margin-right: 8px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 8px;
+        }
+
+        .tag {
+            padding: 7px 10px;
+
+            border-radius: 8px;
+
+            border: 1px solid var(--border);
+
+            background: rgba(255,255,255,.05);
+
+            color: #cbd5e1;
+
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        /* ================================
+           CERTIFICATIONS
+        ================================= */
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+
+            gap: 20px;
+        }
+
+        .cert-card {
+            position: relative;
+
+            overflow: hidden;
+
+            padding: 32px;
+
+            border-radius: 20px;
+
+            border: 1px solid var(--border);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(14,165,233,.09),
+                    rgba(79,70,229,.06)
+                );
+        }
+
+        .cert-card::after {
+            content: "";
+
+            position: absolute;
+
+            width: 100px;
+            height: 100px;
+
+            right: -30px;
+            top: -30px;
+
+            border-radius: 50%;
+
+            background: #2563eb;
+
+            filter: blur(60px);
+
+            opacity: .25;
+        }
+
+        .cert-score {
+            color: var(--blue);
+
+            font-size: 45px;
+            font-weight: 800;
+
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .cert-card p {
+            color: var(--muted);
+
+            font-size: 13px;
+        }
+
+        /* ================================
+           LANGUAGES
+        ================================= */
+
+        .languages {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+
+            gap: 18px;
+        }
+
+        .language-card {
+            padding: 25px;
+
+            text-align: center;
+
+            border: 1px solid var(--border);
+
+            border-radius: 18px;
+
+            background: var(--card);
+        }
+
+        .language-card i {
+            color: var(--blue);
+
+            font-size: 23px;
+
+            margin-bottom: 12px;
+        }
+
+        .language-card h3 {
+            margin-bottom: 4px;
+        }
+
+        .language-card p {
+            color: var(--muted);
+
+            font-size: 13px;
+        }
+
+        /* ================================
+           SOCIAL / CONTENT
+        ================================= */
+
+        .creator-card {
+            display: grid;
+            grid-template-columns: 1fr auto;
+
+            align-items: center;
+
+            gap: 30px;
+
+            padding: 40px;
+
+            border-radius: 24px;
+
+            border: 1px solid var(--border);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(236,72,153,.08),
+                    rgba(139,92,246,.07),
+                    rgba(56,189,248,.06)
+                );
+        }
+
+        .creator-card h3 {
+            font-size: 25px;
+            margin-bottom: 8px;
+        }
+
+        .creator-card p {
+            max-width: 700px;
+
+            color: var(--muted);
+
+            font-size: 14px;
+        }
+
+        .instagram-button {
+            white-space: nowrap;
+        }
+
+        /* ================================
+           CONTACT
+        ================================= */
+
+        .contact-card {
+            padding: 65px 35px;
+
+            text-align: center;
+
+            border-radius: 28px;
+
+            border: 1px solid var(--border);
+
+            background:
+                radial-gradient(
+                    circle at top,
+                    rgba(56,189,248,.13),
+                    transparent 45%
+                ),
+                var(--card);
+
+            box-shadow: var(--shadow);
+        }
+
+        .contact-card h2 {
+            font-family: "Manrope", sans-serif;
+
+            font-size: clamp(36px,5vw,55px);
+
+            letter-spacing: -2px;
+
+            margin-bottom: 14px;
+        }
+
+        .contact-card > p {
+            max-width: 620px;
+
+            margin: auto auto 28px;
+
+            color: var(--muted);
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        /* ================================
+           FOOTER
+        ================================= */
+
+        footer {
+            padding: 30px;
+
+            text-align: center;
+
+            color: #64748b;
+
+            border-top: 1px solid var(--border);
+
+            font-size: 12px;
+        }
+
+        /* ================================
+           SCROLL REVEAL
+        ================================= */
+
+        .reveal {
+            opacity: 0;
+
+            transform: translateY(30px);
+
+            transition:
+                opacity .7s ease,
+                transform .7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ================================
+           TABLET
+        ================================= */
+
+        @media (max-width: 950px) {
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .photo-wrapper {
+                margin: auto;
+            }
+
+            .about-grid {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .stats {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .stat:nth-child(2) {
+                border-right: none;
+            }
+
+            .stat:nth-child(1),
+            .stat:nth-child(2) {
+                border-bottom: 1px solid var(--border);
+            }
+
+        }
+
+        /* ================================
+           MOBILE
+        ================================= */
+
+        @media (max-width: 700px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-inner {
+                height: 65px;
+            }
+
+            .hero {
+                padding-top: 100px;
+            }
+
+            .hero h1 {
+                font-size: 54px;
+                letter-spacing: -3px;
+            }
+
+            .hero-role {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 75px 0;
+            }
+
+            .about-grid,
+            .skills-grid,
+            .cert-grid,
+            .languages {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-card {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .education-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .creator-card {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .profile-card {
+                border-radius: 22px;
+            }
+
+            .profile-card img {
+                border-radius: 16px;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+            }
+
+            .contact-buttons .btn {
+                width: 100%;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+<!-- ===================================
+     NAVBAR
+=================================== -->
+
+<nav id="navbar">
+
+    <div class="container nav-inner">
+
+        <a href="#home" class="logo">
+            ALIRIZO<span>.</span>
+        </a>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#experience">Experience</a>
+            </li>
+
+            <li>
+                <a href="#education">Education</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#contact"
+                   class="nav-contact">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+
+<!-- ===================================
+     HERO
+=================================== -->
+
+<header class="hero" id="home">
+
+    <div class="container">
+
+        <div class="hero-grid">
+
+
+            <!-- LEFT -->
+
+            <div>
+
+                <div class="availability">
+
+                    <span class="dot"></span>
+
+                    Open to professional opportunities
+
+                </div>
+
+
+                <div class="hero-small">
+
+                    Hello, I'm
+
+                </div>
+
+
+                <h1>
+
+                    Alirizo
+
+                    <br>
+
+                    <span>
+                        Ibragimov.
+                    </span>
+
+                </h1>
+
+
+                <div class="hero-role">
+
+                    Computer Science Student
+                    • English Educator
+                    • Content Creator
+
+                </div>
+
+
+                <p class="hero-description">
+
+                    Computer Science student at Webster University
+                    in Tashkent with practical experience in English
+                    education and student support.
+
+                    I combine an interest in technology, programming,
+                    mathematics and digital media with strong
+                    communication and teaching experience.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+
+                    <a href="#contact"
+                       class="btn btn-primary">
+
+                        <i class="fa-solid fa-paper-plane"></i>
+
+                        Contact Me
+
+                    </a>
+
+
+                    <a href="https://www.instagram.com/teacher__alirizo/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="btn btn-outline">
+
+                        <i class="fa-brands fa-instagram"></i>
+
+                        @teacher__alirizo
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT PHOTO -->
+
+            <div class="photo-wrapper">
+
+                <div class="photo-glow"></div>
+
+                <div class="profile-card">
+
+                    <img
+                        src="alirizo-profile.jpg"
+                        alt="Alirizo Ibragimov"
+                    >
+
+                    <div class="profile-info">
+
+                        <h3>
+                            Alirizo Ibragimov
+                        </h3>
+
+                        <p>
+                            Tashkent, Uzbekistan
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- STATS -->
+
+        <div class="stats">
+
+            <div class="stat">
+
+                <strong>50+</strong>
+
+                <span>
+                    Students Taught
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <strong>2+</strong>
+
+                <span>
+                    Years of Experience
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <strong>6.0</strong>
+
+                <span>
+                    IELTS
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <strong>B2</strong>
+
+                <span>
+                    CEFR Level
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ===================================
+     ABOUT
+=================================== -->
+
+<section id="about">
+
+    <div class="container reveal">
+
+        <div class="section-label">
+            About Me
+        </div>
+
+        <h2 class="section-title">
+            More than one direction.
+        </h2>
+
+        <p class="section-description">
+
+            My experience connects education, technology,
+            communication and content creation. I enjoy learning
+            new skills and turning knowledge into practical
+            experience.
+
+        </p>
+
+
+        <div class="about-grid">
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+
+                <h3>
+                    Technology
+                </h3>
+
+                <p>
+                    Building my foundation in Computer Science,
+                    programming and web development.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                </div>
+
+                <h3>
+                    Education
+                </h3>
+
+                <p>
+                    Practical experience teaching English
+                    and supporting students in their learning.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-calculator"></i>
+                </div>
+
+                <h3>
+                    Mathematics
+                </h3>
+
+                <p>
+                    Currently strengthening mathematical
+                    knowledge and problem-solving skills.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-video"></i>
+                </div>
+
+                <h3>
+                    Digital Content
+                </h3>
+
+                <p>
+                    Creating English-language educational
+                    content for social media.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===================================
+     EXPERIENCE
+=================================== -->
+
+<section id="experience">
+
+    <div class="container reveal">
+
+        <div class="section-label">
+            Experience
+        </div>
+
+        <h2 class="section-title">
+            Professional Journey
+        </h2>
+
+        <p class="section-description">
+
+            Experience in both independent teaching and
+            an educational organization.
+
+        </p>
+
+
+        <div class="experience-list">
+
+
+            <!-- PRIVATE TUTOR -->
+
+            <div class="experience-card">
+
+                <div class="experience-date">
+                    2024 — 2025
+                </div>
+
+                <div class="experience-content">
+
+                    <h3>
+                        Private English Tutor
+                    </h3>
+
+                    <div class="company">
+                        Independent • Uzbekistan
+                    </div>
+
+                    <p>
+
+                        Provided private English-language education
+                        to more than 50 students.
+
+                        Supported learners in developing vocabulary,
+                        grammar, speaking skills and confidence in
+                        English communication.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FALCON FLY -->
+
+            <div class="experience-card">
+
+                <div class="experience-date">
+                    2025 — 2026
+                </div>
+
+                <div class="experience-content">
+
+                    <h3>
+                        Support Teacher → English Teacher
+                    </h3>
+
+                    <div class="company">
+                        Falcon Fly • Samarkand, Uzbekistan
+                    </div>
+
+                    <p>
+
+                        Started as a Support Teacher, assisting
+                        students during lessons and supporting
+                        the learning process.
+
+                        Later progressed to an English Teacher role
+                        for approximately six months, gaining
+                        hands-on experience in teaching, student
+                        communication, classroom management and
+                        lesson support.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===================================
+     EDUCATION
+=================================== -->
+
+<section id="education">
+
+    <div class="container reveal">
+
+        <div class="section-label">
+            Education
+        </div>
+
+        <h2 class="section-title">
+            Academic Background
+        </h2>
+
+
+        <div class="education-card">
+
+            <div class="education-left">
+
+                <div class="education-icon">
+
+                    <i class="fa-solid fa-graduation-cap"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Webster University in Tashkent
+                    </h3>
+
+                    <p>
+                        Computer Science
+                    </p>
+
+                    <p>
+                        Programming • Digital Media • Mathematics • Technology
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="education-year">
+
+                2026 — 2030
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===================================
+     SKILLS
+=================================== -->
+
+<section id="skills">
+
+    <div class="container reveal">
+
+        <div class="section-label">
+            Skills
+        </div>
+
+        <h2 class="section-title">
+            Tools & Abilities
+        </h2>
+
+        <p class="section-description">
+
+            Technical and professional skills I am
+            currently using and developing.
+
+        </p>
+
+
+        <div class="skills-grid">
+
+
+            <div class="skill-card">
+
+                <h3>
+
+                    <i class="fa-solid fa-terminal"></i>
+
+                    Development
+
+                </h3>
+
+                <div class="tags">
+
+                    <span class="tag">C++</span>
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">Programming Fundamentals</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>
+
+                    <i class="fa-solid fa-laptop"></i>
+
+                    Digital Tools
+
+                </h3>
+
+                <div class="tags">
+
+                    <span class="tag">Microsoft Excel</span>
+                    <span class="tag">Microsoft Word</span>
+                    <span class="tag">PowerPoint</span>
+                    <span class="tag">Presentations</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>
+
+                    <i class="fa-solid fa-users"></i>
+
+                    Professional Skills
+
+                </h3>
+
+                <div class="tags">
+
+                    <span class="tag">Teaching</span>
+                    <span class="tag">Communication</span>
+                    <span class="tag">Teamwork</span>
+                    <span class="tag">Classroom Support</span>
+                    <span class="tag">Content Creation</span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===================================
+     CERTIFICATIONS
+=================================== -->
+
+<section>
+
+    <div class="container reveal">
+
+        <div class="section-label">
+            Certifications
+        </div>
+
+        <h2 class="section-title">
+            English Qualifications
+        </h2>
+
+
+        <div class="cert-grid">
+
+
+            <div class="cert-card">
+
+                <div class="cert-score">
+                    6.0
+                </div>
+
+                <h3>
+                    IELTS
+                </h3>
+
+                <p>
+                    International English Language
+                    Testing System
+                </p>
+
+            </div>
+
+
+            <div class="cert-card">
+
+                <div class="cert-score">
+                    B2
+                </div>
+
+                <h3>
+                    CEFR
+                </h3>
+
+                <p>
+                    CEFR Score: 60
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===================================
+     LANGUAGES
+=================================== -->
+
+<section>
+
+    <div class="container reveal">
+
+        <div class="section-label">
+            Languages
+        </div>
+
+        <h2 class="section-title">
+            Communication
+        </h2>
+
+
+        <div class="languages">
+
+
+            <div class="language-card">
+
+                <i class="fa-solid fa-language"></i>
+
+                <h3>
+                    Uzbek
+                </h3>
+
+                <p>
+                    Fluent
+                </p>
+
+            </div>
+
+
+            <div class="language-card">
+
+                <i class="fa-solid fa-globe"></i>
+
+                <h3>
+                    English
+                </h3>
+
+                <p>
+                    Fluent / Professional Use
+                </p>
+
+            </div>
+
+
+            <div class="language-card">
+
+                <i class="fa-solid fa-book-open"></i>
+
+                <h3>
+                    Russian
+                </h3>
+
+                <p>
+                    Currently Learning
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===================================
+     CONTENT CREATOR
+=================================== -->
+
+<section>
+
+    <div class="container reveal">
+
+        <div class="section-label">
+            Content
+        </div>
+
+        <h2 class="section-title">
+            Beyond the Classroom
+        </h2>
+
+
+        <div class="creator-card">
+
+            <div>
+
+                <h3>
+                    English Content Creator
+                </h3>
+
+                <p>
+
+                    Alongside my studies and teaching experience,
+                    I create English-language content on social
+                    media to share knowledge, practice communication
+                    and connect with a wider audience.
+
+                </p>
+
+            </div>
+
+
+            <a
+                href="https://www.instagram.com/teacher__alirizo/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary instagram-button"
+            >
+
+                <i class="fa-brands fa-instagram"></i>
+
+                @teacher__alirizo
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===================================
+     CONTACT
+=================================== -->
+
+<section id="contact">
+
+    <div class="container reveal">
+
+        <div class="contact-card">
+
+
+            <div class="section-label">
+                Contact
+            </div>
+
+
+            <h2>
+                Let's work together.
+            </h2>
+
+
+            <p>
+
+                I'm open to professional opportunities,
+                collaborations and projects where I can
+                contribute my skills while continuing to grow.
+
+            </p>
+
+
+            <div class="contact-buttons">
+
+
+                <a
+                    href="mailto:alirizoibragimov961@gmail.com"
+                    class="btn btn-primary"
+                >
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    Email Me
+
+                </a>
+
+
+                <a
+                    href="tel:+998997998040"
+                    class="btn btn-outline"
+                >
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    +998 99 799 80 40
+
+                </a>
+
+
+                <a
+                    href="https://www.instagram.com/teacher__alirizo/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-outline"
+                >
+
+                    <i class="fa-brands fa-instagram"></i>
+
+                    Instagram
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===================================
+     FOOTER
+=================================== -->
+
+<footer>
+
+    © 2026 Alirizo Ibragimov
+    • Tashkent, Uzbekistan
+
+</footer>
+
+
+<!-- ===================================
+     JAVASCRIPT
+=================================== -->
+
+<script>
+
+    /* SCROLL REVEAL */
+
+    const revealElements =
+        document.querySelectorAll(".reveal");
+
+    const observer =
+        new IntersectionObserver(
+
+            function(entries) {
+
+                entries.forEach(
+
+                    function(entry) {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add(
+                                "visible"
+                            );
+
+                        }
+
+                    }
+
+                );
+
+            },
+
+            {
+                threshold: 0.10
+            }
+
+        );
+
+    revealElements.forEach(
+
+        function(element) {
+
+            observer.observe(element);
+
+        }
+
+    );
+
+
+    /* NAVBAR EFFECT */
+
+    const navbar =
+        document.getElementById("navbar");
+
+    window.addEventListener(
+
+        "scroll",
+
+        function() {
+
+            if (window.scrollY > 30) {
+
+                navbar.style.background =
+                    "rgba(5,8,22,.94)";
+
+                navbar.style.boxShadow =
+                    "0 10px 35px rgba(0,0,0,.22)";
+
+            } else {
+
+                navbar.style.background =
+                    "rgba(5,8,22,.78)";
+
+                navbar.style.boxShadow =
+                    "none";
+
+            }
+
+        }
+
+    );
+
+</script>
+
+
+</body>
+</html>
